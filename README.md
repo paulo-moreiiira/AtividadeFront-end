@@ -1,1 +1,1 @@
-meu primeiro site criado para atividade pratica da faculdade de ADS.
+meu primeiro site criado para atividade prática da faculdade de ADS.
