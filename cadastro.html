@@ -7,18 +7,23 @@
   <meta name="description" content="Formulário de cadastro para voluntários e doadores">
 </head>
 <body>
-  <header>
-    <a href="index.html"><img src="imagens/logomarca.png" alt="logomarca"></a>
-    <nav aria-label="Menu principal">
-      <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="projetos.html">Projetos</a></li>
-        <li><a href="cadastro.html">Cadastro</a></li>
-      </ul>
-    </nav>
+
+  <header role="banner">
+    <div class="container">
+      <a href="index.html" aria-label="Ir para a página inicial">
+        <img src="imagens/logomarca.png" alt="Logomarca">
+      </a>
+      <nav aria-label="Menu principal">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="cadastro.html">Cadastro</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main>
+  <main id="main-content" role="main" class="container">
     <h1>Cadastro</h1>
 
     <form id="cadastroForm" action="#" method="post">
@@ -32,11 +37,12 @@
         <input id="email" name="email" type="email" required>
 
         <label for="cpf">CPF</label>
-        <input id="cpf" name="cpf" type="text" pattern="\d{11}" inputmode="numeric" required aria-describedby="cpfHelp">
-        <small id="cpfHelp">Apenas números, 11 dígitos.</small>
+        <input id="cpf" name="cpf" type="text" pattern="\d{3}\.?\d{3}\.?\d{3}-?\d{2}" inputmode="numeric" required>
+        <small>Formato: 000.000.000-00</small>
 
         <label for="telefone">Telefone</label>
-        <input id="telefone" name="telefone" type="tel" inputmode="tel" required>
+        <input id="telefone" name="telefone" type="tel" pattern="\(?\d{2}\)?\s?\d{4,5}-?\d{4}" inputmode="tel" required>
+        <small>Formato: (00) 00000-0000</small>
 
         <label for="nasc">Data de Nascimento</label>
         <input id="nasc" name="nasc" type="date" required>
@@ -46,7 +52,11 @@
         <legend>Endereço</legend>
 
         <label for="cep">CEP</label>
-        <input id="cep" name="cep" type="text" inputmode="numeric" required>
+        <input id="cep" name="cep" type="text" pattern="\d{5}-?\d{3}" inputmode="numeric" required>
+        <small>Formato: 00000-000</small>
+
+        <label for="endereco">Endereço</label>
+        <input id="endereco" name="endereco" type="text">
 
         <label for="cidade">Cidade</label>
         <input id="cidade" name="cidade" type="text" required>
@@ -54,10 +64,33 @@
         <label for="estado">Estado</label>
         <select id="estado" name="estado" required>
           <option value="">Selecione</option>
-          <option value="SP">SP</option>
-          <option value="RJ">RJ</option>
+          <option value="AC">AC</option>
+          <option value="AL">AL</option>
+          <option value="AP">AP</option>
+          <option value="AM">AM</option>
+          <option value="BA">BA</option>
+          <option value="CE">CE</option>
+          <option value="DF">DF</option>
+          <option value="ES">ES</option>
+          <option value="GO">GO</option>
+          <option value="MA">MA</option>
+          <option value="MT">MT</option>
+          <option value="MS">MS</option>
           <option value="MG">MG</option>
-          <!-- adicionar demais estados -->
+          <option value="PA">PA</option>
+          <option value="PB">PB</option>
+          <option value="PR">PR</option>
+          <option value="PE">PE</option>
+          <option value="PI">PI</option>
+          <option value="RJ">RJ</option>
+          <option value="RN">RN</option>
+          <option value="RS">RS</option>
+          <option value="RO">RO</option>
+          <option value="RR">RR</option>
+          <option value="SC">SC</option>
+          <option value="SP">SP</option>
+          <option value="SE">SE</option>
+          <option value="TO">TO</option>
         </select>
       </fieldset>
 
@@ -65,8 +98,9 @@
     </form>
   </main>
 
-  <footer>
+  <footer role="contentinfo">
     <p>© 2025, Salvando Vidas. Transparência e impacto social.</p>
   </footer>
+
 </body>
 </html>
