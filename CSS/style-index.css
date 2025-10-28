@@ -210,3 +210,15 @@ footer {
     width: 100%;
   }
 }
+/* CENTRALIZAR SEÇÃO DE CONTATO */
+#contact-title,
+section[aria-labelledby="contact-title"],
+section[aria-labelledby="contact-title"] address {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: var(--space-4) auto;
+  line-height: 1.6;
+}

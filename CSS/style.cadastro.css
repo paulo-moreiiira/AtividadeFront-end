@@ -1,4 +1,4 @@
-/* Variáveis e Design System */
+/* VARIÁVEIS E DESIGN SYSTEM */
 :root {
   --color-primary: #1E3A8A;
   --color-primary-light: #3B82F6;
@@ -26,7 +26,7 @@
   --grid-columns: 12;
 }
 
-/* Body e layout geral */
+/* LAYOUT GERAL */
 body {
   font-family: 'Arial', sans-serif;
   font-size: var(--font-size-md);
@@ -36,7 +36,6 @@ body {
   padding: 0;
 }
 
-/* Container geral mais largo */
 .container {
   display: grid;
   grid-template-columns: repeat(var(--grid-columns), 1fr);
@@ -46,7 +45,7 @@ body {
   padding: var(--space-4);
 }
 
-/* Header */
+/* HEADER */
 header .container {
   display: flex;
   flex-direction: column;
@@ -55,7 +54,6 @@ header .container {
   gap: var(--space-2);
 }
 
-/* Logotipo e título dentro do quadrado laranja */
 header .container > a {
   display: flex;
   align-items: center;
@@ -80,7 +78,7 @@ header .container > a span {
   color: #fff;
 }
 
-/* Menu dentro de quadrados laranja */
+/* Menu */
 nav ul {
   display: flex;
   justify-content: center;
@@ -110,35 +108,77 @@ nav ul li a:hover {
   background-color: var(--color-secondary-light);
 }
 
-/* Título da página */
-h1 {
-  font-size: var(--font-size-xxl);
-  color: var(--color-primary);
+/* TÍTULOS */
+main.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  margin-top: var(--space-5);
-  margin-bottom: var(--space-4);
+  justify-content: center;
 }
 
-/* Formulário */
+main.container h1 {
+  text-align: center;
+  color: var(--color-primary);
+  font-size: var(--font-size-xxl);
+  font-weight: 700;
+  margin-top: var(--space-5);
+  margin-bottom: var(--space-2);
+}
+
+main.container .subtitulo {
+  text-align: center;
+  color: var(--color-text-light);
+  font-size: var(--font-size-lg);
+  max-width: 800px;
+  margin-bottom: var(--space-5);
+  line-height: 1.6;
+}
+
+/*  FORMULÁRIO */
 form {
   background-color: var(--color-surface);
   border-radius: 12px;
   padding: var(--space-5);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-  grid-column: 3 / span 8;
+  grid-column: 2 / span 10;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+  max-width: 800px;
+  width: 100%;
+}
+
+/* Fieldsets */
+fieldset {
+  border: none;
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
-  margin-bottom: var(--space-5);
+  padding: 0;
+  text-align: left;
 }
 
-/* Labels e inputs */
+/* Subtítulos */
+legend {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: var(--space-2);
+  text-align: left;
+}
+
+/* Labels */
 label {
   font-weight: 600;
   color: var(--color-text);
   margin-bottom: var(--space-1);
+  display: inline-block;
+  text-align: left;
 }
 
+/* Inputs */
 input, select, textarea {
   padding: var(--space-2);
   border-radius: 8px;
@@ -154,7 +194,15 @@ input:focus, select:focus, textarea:focus {
   outline: none;
 }
 
-/* Botão de envio */
+/* Formatos ao lado do label */
+label small {
+  color: var(--color-text-light);
+  font-size: var(--font-size-sm);
+  margin-left: var(--space-1);
+  font-weight: normal;
+}
+
+/* Botão */
 button {
   background-color: var(--color-primary);
   color: #fff;
@@ -171,7 +219,7 @@ button:hover {
   background-color: var(--color-primary-light);
 }
 
-/* Footer */
+/* FOOTER */
 footer {
   background-color: var(--color-primary);
   color: #fff;
@@ -181,10 +229,11 @@ footer {
   margin-top: var(--space-5);
 }
 
-/* Responsividade */
+/* RESPONSIVIDADE  */
 @media (max-width: 1024px) {
   form {
-    grid-column: 2 / span 10;
+    grid-column: 1 / span 12;
+    max-width: 90%;
   }
 }
 
@@ -201,9 +250,43 @@ footer {
   form {
     grid-column: 1 / span 12;
     padding: var(--space-4);
+    max-width: 100%;
   }
 
   h1 {
     font-size: var(--font-size-xl);
   }
+
+  legend {
+    font-size: var(--font-size-lg);
+  }
+}
+/* Mensagens de status */
+.mensagem {
+  display: none;
+  font-weight: 600;
+  padding: 12px 20px;
+  border-radius: 8px;
+  max-width: 800px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  animation: fadeIn 0.3s ease;
+}
+
+.mensagem.sucesso {
+  background-color: #ECFDF5; /* fundo verde claro */
+  color: #065F46;
+  border: 1px solid rgba(6,95,70,0.12);
+}
+
+.mensagem.erro {
+  background-color: #FEF2F2; /* fundo vermelho claro */
+  color: #991B1B;
+  border: 1px solid rgba(153,27,27,0.12);
+}
+
+/* animação */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
 }

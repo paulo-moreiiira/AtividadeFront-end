@@ -27,6 +27,7 @@
 
   <main id="main-content" role="main" class="container">
     <h1>Cadastro</h1>
+    <p class="subtitulo">Seja um voluntariado ou um doador dos nossos projetos !</p>
 
     <form id="cadastroForm" action="#" method="post">
       <fieldset>
@@ -38,13 +39,11 @@
         <label for="email">E-mail</label>
         <input id="email" name="email" type="email" required>
 
-        <label for="cpf">CPF</label>
+        <label for="cpf">CPF <small>Formato: 000.000.000-00</small></label>
         <input id="cpf" name="cpf" type="text" pattern="\d{3}\.?\d{3}\.?\d{3}-?\d{2}" inputmode="numeric" required>
-        <small>Formato: 000.000.000-00</small>
 
-        <label for="telefone">Telefone</label>
+        <label for="telefone">Telefone <small>Formato: (00) 00000-0000</small></label>
         <input id="telefone" name="telefone" type="tel" pattern="\(?\d{2}\)?\s?\d{4,5}-?\d{4}" inputmode="tel" required>
-        <small>Formato: (00) 00000-0000</small>
 
         <label for="nasc">Data de Nascimento</label>
         <input id="nasc" name="nasc" type="date" required>
@@ -53,9 +52,8 @@
       <fieldset>
         <legend>Endereço</legend>
 
-        <label for="cep">CEP</label>
+        <label for="cep">CEP <small>Formato: 00000-000</small></label>
         <input id="cep" name="cep" type="text" pattern="\d{5}-?\d{3}" inputmode="numeric" required>
-        <small>Formato: 00000-000</small>
 
         <label for="endereco">Endereço</label>
         <input id="endereco" name="endereco" type="text">
@@ -98,11 +96,17 @@
 
       <button type="submit">Enviar</button>
     </form>
-  </main>
 
-  <footer role="contentinfo">
-    <p>© 2025, Salvando Vidas. Transparência e impacto social.</p>
+<div id="status-area" aria-live="polite" aria-atomic="true" role="status" style="text-align:center; margin-top:16px;">
+  <p id="mensagem-sucesso" class="mensagem sucesso" style="display:none;">Dados enviados com sucesso!</p>
+  <p id="mensagem-erro" class="mensagem erro" style="display:none;">Ocorreu um erro. Tente novamente.</p>
+</div>
+
+</main>
+
+  <footer role="contentinfo"> 
+    <p>© 2025, Salvando Vidas. Transparência e impacto social.</p> 
   </footer>
-
+ <script src="script.js" defer></script>
 </body>
 </html>
